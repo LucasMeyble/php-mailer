@@ -1,0 +1,51 @@
+@import "./fonts.css";
+
+body {
+    margin: 0;
+    padding: 0;
+    background-size: 100%
+}
+
+.text-center {
+    text-align: center;
+}
+
+.container {
+    max-width: 1080px;
+    height: 1920px;
+    background-image: url(../image/fundo.png);
+    background-repeat: round;
+    padding: 50px 100px;
+}
+
+.header img {
+    width: 25vw; 
+    padding-top: 30px;
+}
+.header h1 {
+    font-family: "Harry Potter";
+    font-size: 100px;
+}
+
+.body {
+    font-family: "Caligraf";
+    font-weight: bold;
+    font-size: 45px;
+}
+
+.body p{
+    word-wrap: break-word;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        max-width: 700px;
+        width: 100%;
+        height: auto;
+    }
+
+    .header h1 {
+        font-family: "Harry Potter";
+        font-size: 10px;
+    }
+}

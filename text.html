@@ -1,0 +1,168 @@
+<?php
+
+$request = $_POST;
+
+$nome = $request['first_name'];
+$email = 'lucas_meyble@hotmail.com';
+$assunto = 'esse é o assunto do email';
+$message = '
+		    
+<html lang="pt_BR">
+<head>
+		<meta charset="UTF-8">
+		<title>teste</title>
+		<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+		<style type="text/css">
+	
+	    @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap%27");
+	
+        body {
+            margin: 0;
+            padding: 0;
+            background-size: 100%;
+        }
+        
+        .email{
+           display: flex;
+           justify-content: center;
+           align-items: flex-start;
+        }
+        
+        .container {
+            max-width: 1080px;
+            width: 750px;
+            height: 1920px;
+            background-image: url(http://email.matheuspro.com.br/assets/image/fundo.png);
+            background-repeat: round;
+            padding: 50px 100px;
+            text-align: center;
+        }
+        
+        .header img.logo {
+            width: 20vw; 
+            padding-top: 30px;
+        }
+        .school {
+            width: 50vw;
+            padding-top: 50px;
+        }
+        
+        .footer{
+            text-align: right;
+        }
+        
+        .footer img{
+            width: 30vw;
+        }
+        
+        .email-content {
+            font-family: "Dancing Script", "Garamond", cursive;
+            font-weight: bold;
+            font-size: 40px;
+            font-style: italic;
+            color: black;
+            
+            height: 100%;
+            max-height: 680px;
+        
+        }
+        
+        .body p{
+            word-wrap: break-word;
+        }
+        
+        @media screen and (max-width: 768px) {
+            
+            :root{
+                font-size: 14px;
+            }
+            
+            .email{
+                display: flex;
+                text-align: center;
+            }
+            
+            body {
+                max-width: 700px;
+                width: 100%;
+                height: auto;
+            }
+            
+            .container {
+                max-width: 700px;
+                max-height: 1300px;
+                width: 75%;
+                height: 100%;
+                background-image: url(http://email.matheuspro.com.br/assets/image/fundo.png);
+                background-repeat: round;
+                padding: 25px 50px;
+            }
+            
+            .email-content{
+                font-family: "Dancing Script", cursive;
+                font-style: italic;
+                font-size: 1.2rem;
+                
+                
+                max-height: 680px;
+            }
+            
+            .email-content h2{
+                font-size: 1.2rem;
+            }
+            
+            .header{
+                padding: auto;
+                margin: auto;
+            }
+            
+            .header img.logo {
+                width: 25vw; 
+                padding-top: 20px;
+            }
+            
+            .school {
+                width: 95vw;
+                padding-top: 15px;
+            }
+            
+            .footer{
+                text-align: right;
+            }
+        
+            .footer img{
+                width: 40vw;
+            }
+        }
+		</style>
+	</head>
+	<body>
+	<div class="email">
+    	<div class="container">
+    		<div class="header">
+    			<img class="logo" src="http://email.matheuspro.com.br/assets/image/logo_copiar.png">
+    			<img class="school" src="http://email.matheuspro.com.br/assets/image/escola_de_bruxaria.png">
+    		</div>
+    		<div class="email-content">
+    			<h2> Caro(a) Senhor(a):' . $nome . ' </h2>
+    			<p>
+    				É com grande prazer que lhe aprovamos para estudar na Escola de Bruxaria de HogwAds.
+    				Todo o material que você necessitará para esse período de aprendizado encontrará dentro
+    				da nossa escola. Desejamos que tenha ótimos estudos e que esse início de jornada faça de
+    				você um(a) grande bruxo(a).
+    			</p>
+    		</div>
+    		<div class="footer">
+    			<img src="http://email.matheuspro.com.br/assets/image/assinatura.png">
+    		</div>
+    	</div>
+	</div>
+	</body>
+</html>
+
+		';
+$headers  = 'MIME-Version: 1.0' . "\r\n";
+$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+
+mail($email,  $assunto,  $message, $headers);
