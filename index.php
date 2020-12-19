@@ -18,12 +18,12 @@ try{
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
-    $mail->Username = 'lucasmeyble123@gmail.com';
-    $mail->Password = '81923242';
+    $mail->Username = 'email de onde vai enviar';
+    $mail->Password = 'senha';
     $mail->Port = 587;
 
-    $mail->setFrom('lucasmeyble123@gmail.com');
-    $mail->addAddress('lucas2meyble@gmail.com');
+    $mail->setFrom('email de onde vai enviar');
+    $mail->addAddress('email de quem recebe');
 
     $mail->isHTML(true);
     $mail->Subject = 'teste de email via gmail';
